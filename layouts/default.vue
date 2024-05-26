@@ -1,11 +1,22 @@
 <template>
-  <div>
+  <div class="app">
     <LayoutHeader />
 
     <main>
       <NuxtPage />
     </main>
 
-    <footer>layout footer</footer>
+    <LayoutFooter />
   </div>
 </template>
+
+<style>
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex-grow: 1;
+}
+</style>

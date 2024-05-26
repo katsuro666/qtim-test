@@ -1,5 +1,5 @@
 <template>
-  <div class="header-wrapper">
+  <div class="header">
     <NuxtLink to="/"><img src="~/assets/icons/Qtim.svg" alt="logo" /></NuxtLink>
 
     <div class="header__info">
@@ -26,7 +26,7 @@
 <script setup lang="ts"></script>
 
 <style lang="scss" scoped>
-.header-wrapper {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
