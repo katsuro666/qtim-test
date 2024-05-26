@@ -7,6 +7,7 @@
         <div class="post">
           <img :src="post.image" alt="Post image" class="post__image" />
           <p class="post__title">{{ post.preview }}</p>
+          <span class="post__read-more">Read more</span>
         </div>
       </NuxtLink>
     </div>
@@ -120,12 +121,15 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
   transition: all ease 0.3s;
 
   &:hover {
     cursor: pointer;
     transform: translateY(-20px);
+
+    .post__read-more {
+      display: block;
+    }
   }
 }
 .post__image {
@@ -134,7 +138,7 @@ onMounted(() => {
   object-fit: cover;
 }
 .post__title {
-  margin: 0;
+  margin: 24px 0 12px;
   padding: 0;
   font-size: 20px;
   height: 72px;
@@ -182,5 +186,14 @@ onMounted(() => {
   &:hover {
     cursor: pointer;
   }
+}
+
+.post__read-more {
+  display: none;
+  position: absolute;
+  bottom: -12px;
+  align-self: baseline;
+  font-size: 20px;
+  color: $footer-bg;
 }
 </style>
