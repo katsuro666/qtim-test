@@ -139,7 +139,7 @@ footer
 .bottom__btn {
   position: absolute;
   left: calc(50% - 358px / 2);
-  bottom: -10px;
+  bottom: -30px;
   display: flex;
   justify-content: center;
   align-items: end;

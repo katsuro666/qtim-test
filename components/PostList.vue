@@ -12,7 +12,12 @@
     </div>
 
     <div class="pagination">
-      <button @click="prevPage" v-if="currentPage !== 1" class="pagination__button--arrow btn"><</button>
+      <button
+        @click="prevPage"
+        v-if="currentPage !== 1"
+        class="pagination__button--arrow pagination__button--arrow-back btn">
+        <
+      </button>
       <button
         v-for="page in paginationRange"
         @click="currentPage = page"
@@ -21,7 +26,12 @@
         :class="{ 'pagination__button--active': currentPage === page }">
         {{ page }}
       </button>
-      <button @click="nextPage" v-if="currentPage !== totalPages" class="pagination__button--arrow btn">></button>
+      <button
+        @click="nextPage"
+        v-if="currentPage !== totalPages"
+        class="pagination__button--arrow pagination__button--arrow-forward btn">
+        >
+      </button>
     </div>
   </template>
 </template>
@@ -134,6 +144,7 @@ onMounted(() => {
 }
 
 .pagination {
+  position: relative;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -154,6 +165,11 @@ onMounted(() => {
     background-color: transparent;
     border: 1px solid $gray-1;
     color: $gray-500;
+
+    &-back {
+      position: absolute;
+      left: -52px;
+    }
   }
 }
 
