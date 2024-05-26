@@ -1,42 +1,5 @@
-# Content v2 Minimal Starter
+# Тестовое задание в компанию QTIM
 
-Look at the [Content documentation](https://content.nuxt.com/) to learn more.
+## Деплой приложения: https://qtim-test-vert.vercel.app/
 
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+### Замечен "сбой" во время работы с предоставленной АПИшкой, на первых 8-9 страницах не загружаются картинки, на следующих страницах всё норм. Считаю, что это проблема воображаемого бэка, поэтому сообщить - сообщил, но по факту исправить это я не могу)
