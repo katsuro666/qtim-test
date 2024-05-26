@@ -3,6 +3,9 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxt/content'],
   css: ['~/assets/scss/main.scss'],
+  typescript: {
+    typeCheck: true
+  },
   vite: {
     css: {
       preprocessorOptions: {
