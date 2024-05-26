@@ -1,8 +1,7 @@
 <template>
-  <div class="loader" v-if="Object.keys(post).length == 0">Loading...</div>
+  <div class="loader" v-if="post.description.length === 0">Loading...</div>
 
   <div v-else class="post__container">
-    <!-- post number {{ $route.params.post }} -->
     <h1 class="post__heading">{{ post.preview }}</h1>
 
     <img :src="post.image" alt="Post image" class="post__image" />
@@ -18,14 +17,12 @@
 import axios from 'axios';
 
 interface Post {
-  id: number;
   preview: string;
   description: string;
   image: string;
 }
 
 const post = ref<Post>({
-  id: 0,
   preview: '',
   description: '',
   image: '',
@@ -50,6 +47,13 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .post__container {
   display: flex;
   flex-direction: column;

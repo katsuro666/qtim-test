@@ -108,7 +108,7 @@ onMounted(() => {
 }
 .posts__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 40px 32px;
 }
 
@@ -119,6 +119,7 @@ onMounted(() => {
 .post {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
   transition: all ease 0.3s;
 
