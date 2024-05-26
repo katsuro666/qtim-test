@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import axios from 'axios';
+import axios, { type AxiosResponse } from 'axios';
 
 interface Post {
   preview: string;
@@ -32,7 +32,7 @@ const postID = ref(route.params.post);
 
 const fetchPost = async () => {
   try {
-    const response = await axios.get(
+    const response: AxiosResponse<Post> = await axios.get(
       `https://6082e3545dbd2c001757abf5.mockapi.io/qtim-test-work/posts/${postID.value}`
     );
     post.value = response.data;

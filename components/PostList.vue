@@ -39,7 +39,7 @@
 
 <script lang="ts" setup>
 import { ref, computed, onMounted } from 'vue';
-import axios from 'axios';
+import axios, { type AxiosResponse } from 'axios';
 
 interface Post {
   id: number;
@@ -53,7 +53,7 @@ const postsPerPage = 8;
 
 const fetchPosts = async () => {
   try {
-    const response = await axios.get('https://6082e3545dbd2c001757abf5.mockapi.io/qtim-test-work/posts/');
+    const response: AxiosResponse<Post[]> = await axios.get('https://6082e3545dbd2c001757abf5.mockapi.io/qtim-test-work/posts/');
     posts.value = response.data;
   } catch (error) {
     console.error('Error fetching posts:', error);
@@ -64,7 +64,7 @@ const paginationRange = computed(() => {
   const startPage = Math.max(currentPage.value - 2, 1);
   const endPage = Math.min(currentPage.value + 2, totalPages.value);
 
-  let pages = [];
+  let pages: number[] = [];
   for (let page = startPage; page <= endPage; page++) {
     pages.push(page);
   }
